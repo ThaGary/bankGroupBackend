@@ -40,6 +40,12 @@ app.post('/accounts', (req, res) => {
 app.post('/transactions', (req, res) => {
     queries.createTransaction(req.body).then(transaction => res.send(transaction))
 })
+app.put('/users/:id', (req, res) => {
+    queries.updateUser(req.params.id, req.body).then(updateUser => res.send(updateUser))
+})
+app.put('/users/:id', (req, res) => {
+    queries.updateUser(req.params.id, req.body).then(updateUser => res.send(updateUser))
+})
 
 
 app.listen(port, () => {

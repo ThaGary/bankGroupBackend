@@ -35,7 +35,7 @@ module.exports = {
             .returning('*')
     },
     createTransaction(newTransaction) {
-        return db('users')
+        return db('transactions')
             .insert(newTransaction)
             .returning('*')
     },
@@ -50,8 +50,12 @@ module.exports = {
             .where('id', id)
             .update(account)
             .returning('*')
+    },
+    updateTransaction(id, transaction) {
+        return db('transactions')
+            .where('id', id)
+            .update(transaction)
+            .returning('*')
     }
-
-
 
 }
