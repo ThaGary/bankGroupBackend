@@ -24,6 +24,22 @@ module.exports = {
             .where('id', id)
             .first()
     },
+    createUser(newUser) {
+        return db('users')
+            .insert(newUser)
+            .returning('*')
+    },
+    createAccount(newAccount) {
+        return db('users')
+            .insert(newAccount)
+            .returning('*')
+    },
+    createTransaction(newTransaction) {
+        return db('users')
+            .insert(newTransaction)
+            .returning('*')
+    },
+
 
 
 }

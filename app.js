@@ -31,6 +31,16 @@ app.get('/accounts/:id', (req, res) => {
 app.get('/transactions/:id', (req, res) => {
     queries.getTransactionsById(req.params.id).then(transaction => res.status(200).send(transaction))
 })
+app.post('/users', (req, res) => {
+    queries.createUser(req.body).then(user => res.send(user))
+})
+app.post('/accounts', (req, res) => {
+    queries.createAccount(req.body).then(account => res.send(account))
+})
+app.post('/transactions', (req, res) => {
+    queries.createTransaction(req.body).then(transaction => res.send(transaction))
+})
+
 
 app.listen(port, () => {
     console.log('listening on port:', port)
