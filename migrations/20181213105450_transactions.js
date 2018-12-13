@@ -1,9 +1,13 @@
-exports.up = function(knex, Promise) {
+exports.up = function (knex, Promise) {
     return knex.schema.createTable('transactions', (transaction) => {
-         entityInTable.increments('id')
+        transaction.increments('id')
+        transaction.specificType('title', 'CHAR(8)')
+        transaction.boolean('status')
+        transaction.integer('amount')
+        transaction.integer('account_id').references('id').inTable('accounts')
     });
 };
 
-exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('transactions’);
+exports.down = function (knex, Promise) {
+    return knex.schema.dropTableIfExists('transactions');
 };
