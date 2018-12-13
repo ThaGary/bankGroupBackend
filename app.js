@@ -6,7 +6,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 app.use(cors())
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
@@ -14,7 +13,6 @@ app.use(bodyParser.urlencoded({
 
 app.get('/users', (req, res) => {
     queries.getAllUsers().then(users => res.json(users))
-
 })
 app.get('/accounts', (req, res) => {
     queries.getAllAccounts().then(accounts => res.json(accounts))
