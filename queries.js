@@ -8,5 +8,22 @@ module.exports = {
     },
     getAllTransactions() {
         return db('transactions')
-    }
+    },
+    getUsersById(id) {
+        return db('users')
+            .where('id', id)
+            .first()
+    },
+    getAccountsById(id) {
+        return db('accounts')
+            .where('id', id)
+            .first()
+    },
+    getTransactionsById(id) {
+        return db('transactions')
+            .where('id', id)
+            .first()
+    },
+
+
 }
