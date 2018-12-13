@@ -43,8 +43,11 @@ app.post('/transactions', (req, res) => {
 app.put('/users/:id', (req, res) => {
     queries.updateUser(req.params.id, req.body).then(updateUser => res.send(updateUser))
 })
-app.put('/users/:id', (req, res) => {
-    queries.updateUser(req.params.id, req.body).then(updateUser => res.send(updateUser))
+app.put('/accounts/:id', (req, res) => {
+    queries.updateAccount(req.params.id, req.body).then(updateAccount => res.send(updateAccount))
+})
+app.put('/transactions/:id', (req, res) => {
+    queries.updateTransaction(req.params.id, req.body).then(updateTransaction => res.send(updateTransaction))
 })
 
 
