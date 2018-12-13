@@ -56,6 +56,21 @@ module.exports = {
             .where('id', id)
             .update(transaction)
             .returning('*')
+    },
+    deleteUser(id) {
+        return db('users')
+            .where('id', id)
+            .del()
+    },
+    deleteAccount(id) {
+        return db('accounts')
+            .where('id', id)
+            .del()
+    },
+    deleteTransaction(id) {
+        return db('transactions')
+            .where('id', id)
+            .del()
     }
 
 }
